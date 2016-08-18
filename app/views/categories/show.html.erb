@@ -1,0 +1,9 @@
+
+<h1><%= @categories.name %></h1>
+
+<% @categories.books.each do |category| %>
+
+  <b>Title </b>
+  <%= link_to category.name, category_path(category) %>
+  <b>Description </b><%= category.description %><br>
+<% end %>

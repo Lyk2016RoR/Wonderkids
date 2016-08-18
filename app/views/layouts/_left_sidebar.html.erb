@@ -2,8 +2,16 @@
 	<p class="lead">Categories</p>
 
 	<div class="list-group">
+<<<<<<< Updated upstream
 	    	<% @category_sidebar.each do |sidebar| %>
 	    	<%=link_to sidebar.name, book_path(sidebar.id)%></br>
 				<%end%>
+=======
+	    	<%@category_sidebar.each do |sidebar|%>
+	    <%=link_to sidebar.name, category_path(sidebar.id)%></br>
+	  
+<%end%>
+	</div
+>>>>>>> Stashed changes
 	</div>
 </div>
