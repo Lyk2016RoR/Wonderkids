@@ -14,4 +14,4 @@ l = Language.create(name:"İngilizce")
 p = Publisher.create(name:"YKB")
 a = Author.create(name:"Haruki Murakami",description:"süper")
 
-Book.create(name: 'Sahilde Kafka', description: 'Über Züper bir kitap', category: c1, language: l, author: a ,publisher:p )
+Book.create(name: 'Sahilde Kafka', description: 'Über Züper bir kitap', category_id: c1, language_id: l, author_id: a ,publisher_id:p )
