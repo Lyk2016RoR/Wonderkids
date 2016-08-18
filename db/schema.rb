@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818135915) do
+ActiveRecord::Schema.define(version: 20160818155822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 20160818135915) do
   end
 
   create_table "books_wishlists", force: :cascade do |t|
-    t.integer "books_id"
-    t.integer "wishlists_id"
-    t.index ["books_id"], name: "index_books_wishlists_on_books_id", using: :btree
-    t.index ["wishlists_id"], name: "index_books_wishlists_on_wishlists_id", using: :btree
+    t.integer "book_id"
+    t.integer "wishlist_id"
+    t.index ["book_id"], name: "index_books_wishlists_on_book_id", using: :btree
+    t.index ["wishlist_id"], name: "index_books_wishlists_on_wishlist_id", using: :btree
   end
 
   create_table "categories", force: :cascade do |t|
@@ -61,6 +61,18 @@ ActiveRecord::Schema.define(version: 20160818135915) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_comments_on_book_id", using: :btree
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "publishers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
