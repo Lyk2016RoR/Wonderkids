@@ -11,7 +11,7 @@ c2 = Category.create(name: "Dram")
 c3 = Category.create(name: "Bilim Kurgu")
 
 l = Language.create(name:"İngilizce")
-p = Publisher.create(name:"İngilizce")
+p = Publisher.create(name:"YKB")
 a = Author.create(name:"Haruki Murakami",description:"süper")
 
-Book.create(name: 'Sahilde Kafka', description: 'Über Züper bir kitap', category: c1, language: u, author:a ,publisher:p )
+Book.create(name: 'Sahilde Kafka', description: 'Über Züper bir kitap', category: c1, language: l, author: a ,publisher:p )

@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 20160818155822) do
   end
 
   create_table "books_wishlists", force: :cascade do |t|
-    t.integer "book_id"
-    t.integer "wishlist_id"
-    t.index ["book_id"], name: "index_books_wishlists_on_book_id", using: :btree
-    t.index ["wishlist_id"], name: "index_books_wishlists_on_wishlist_id", using: :btree
+    t.integer "books_id"
+    t.integer "wishlists_id"
+    t.index ["books_id"], name: "index_books_wishlists_on_books_id", using: :btree
+    t.index ["wishlists_id"], name: "index_books_wishlists_on_wishlists_id", using: :btree
   end
 
   create_table "categories", force: :cascade do |t|
