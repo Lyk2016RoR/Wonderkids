@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-	has_many :categories
+	belongs_to :category
 	belongs_to :author
 	has_many :comments
 	belongs_to :languages

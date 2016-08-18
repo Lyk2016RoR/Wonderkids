@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
   
   validates :name, presence: true
-  belongs_to :book
+  has_many :books
 end
