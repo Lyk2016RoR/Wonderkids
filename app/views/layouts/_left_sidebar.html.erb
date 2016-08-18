@@ -2,10 +2,8 @@
 	<p class="lead">Categories</p>
 
 	<div class="list-group">
-	    	<%@category_sidebar.each do |sidebar|%>
-	    <%=link_to sidebar.name, book_path(sidebar.id)%></br>
-	  
-<%end%>
-	</div
+	    	<% @category_sidebar.each do |sidebar| %>
+	    	<%=link_to sidebar.name, book_path(sidebar.id)%></br>
+				<%end%>
 	</div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818155822) do
+ActiveRecord::Schema.define(version: 20160818175211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,16 +35,18 @@ ActiveRecord::Schema.define(version: 20160818155822) do
     t.integer  "author_id"
     t.integer  "language_id"
     t.integer  "publisher_id"
+    t.integer  "category_id"
     t.index ["author_id"], name: "index_books_on_author_id", using: :btree
+    t.index ["category_id"], name: "index_books_on_category_id", using: :btree
     t.index ["language_id"], name: "index_books_on_language_id", using: :btree
     t.index ["publisher_id"], name: "index_books_on_publisher_id", using: :btree
   end
 
   create_table "books_wishlists", force: :cascade do |t|
-    t.integer "books_id"
-    t.integer "wishlists_id"
-    t.index ["books_id"], name: "index_books_wishlists_on_books_id", using: :btree
-    t.index ["wishlists_id"], name: "index_books_wishlists_on_wishlists_id", using: :btree
+    t.integer "book_id"
+    t.integer "wishlist_id"
+    t.index ["book_id"], name: "index_books_wishlists_on_book_id", using: :btree
+    t.index ["wishlist_id"], name: "index_books_wishlists_on_wishlist_id", using: :btree
   end
 
   create_table "categories", force: :cascade do |t|
