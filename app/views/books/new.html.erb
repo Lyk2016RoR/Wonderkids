@@ -1,0 +1,15 @@
+<div align="center"><h1>Create a new Book</h1>
+
+<% if @book.errors.any? %>
+	<h3>
+	<%=  @book.errors.full_messages.join(", ") %>
+	</h3>
+<%end%>
+
+<form action="<%= books_path %>" method="post">
+
+
+<%= render "form" %>
+
+</form>
+</div>
