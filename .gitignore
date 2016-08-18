@@ -23,3 +23,5 @@
 /.idea *
 /public/system/*
 .rvmrc
+
+/db/schema.rb
