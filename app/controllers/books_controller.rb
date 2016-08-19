@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-		before_action :authenticate_user!, except: [:show, :index]
+		  before_action :authenticate_user!, except: [:show, :index]
      	before_action :set_book, only: [:show, :update, :edit, :destroy]
      	before_action :authorize_user!, only: [:edit, :update, :destroy]
 	def new
@@ -8,6 +8,11 @@ class BooksController < ApplicationController
 			#load_categories
 			load_form_data
 	end
+
+	def index
+		@books=Book.all
+	end
+
 	def show
 		@books = Book.find(params[:id])
 		if current_user

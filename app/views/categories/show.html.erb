@@ -1,5 +1,5 @@
 <% @category.books.each do |book| %>
 	<h3>Name: </h3><%=@category.name%>
-	<b>Name: </b><%=link_to book.name, category_path(book)%>
+	<b>Name: </b><%=link_to book.name, book_path(book)%>
   <b>description: </b><%=book.description%>
 <%end%>

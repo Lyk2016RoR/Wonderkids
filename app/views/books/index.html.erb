@@ -1,5 +1,5 @@
 <%@books.each do |books|%>
-<%=books.name%>
+<%=link_to books.name, book_path(books)%>
 <%=books.publish_date%>
 <%=books.description%>
 <%=books.ISBN%>

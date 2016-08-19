@@ -1,0 +1,4 @@
+<%@publisher.books.each do |book|%>
+  <b>Pulisher Name: </b><%=@publisher.name%>
+  <b>Books: </b><%=link_to book.name, book_path(book)%>
+<%end%>

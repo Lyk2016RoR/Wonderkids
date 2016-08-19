@@ -1,0 +1,5 @@
+<h1>Authors index</h1>
+
+<%@authors.each do |authors|%>
+  <%=link_to authors.name, author_path(authors)%><br/>
+<%end%>
