@@ -4,6 +4,10 @@
 
 <br/><br/>
 <br/>
+<% if current_user %>
+<%= link_to "favorite",   favorite_book_path(@book, type: "favorite"), method: :put %>
+<%= link_to "unfavorite", favorite_book_path(@book, type: "unfavorite"), method: :put %>
+<% end %>
 <b>Name: </b><%=@book.name%><br/>
 <b>Description: </b><%=@book.description%><br/>
 <b>ISBN: </b><%=@book.ISBN%><br/>

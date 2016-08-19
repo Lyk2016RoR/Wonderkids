@@ -6,6 +6,9 @@ class Book < ApplicationRecord
 	belongs_to :publisher
  	has_and_belongs_to_many :wishlists
  	has_many :votes
+	has_many :users
+	has_many :favorite_books
+	has_many :favorited_by, through: :favorite_books, source: :user
  	has_many :voters, through: :votes, source: :user
 
  	def average_rating

@@ -5,6 +5,10 @@
 <%=books.ISBN%>
 <%=books.views_count%>
 <%end%>
+<% if current_user %>
+<%= link_to "favorite",   favorite_recipe_path(@book, type: "favorite"), method: :put %>
+<%= link_to "unfavorite", favorite_recipe_path(@book, type: "unfavorite"), method: :put %>
+<% end %>
 
 <div class="row">
 <div class="col-md-4">
