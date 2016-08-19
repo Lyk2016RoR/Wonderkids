@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :books do 
   	   resources :votes, only: [:create, :update]
+       resources :comments, only: [:create, :destroy, :show]
   end
 
   resources :categories

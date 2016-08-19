@@ -4,11 +4,11 @@
 
 <br/><br/>
 <br/>
-<b>Name: </b><%=@books.name%><br/>
-<b>Description: </b><%=@books.description%><br/>
-<b>ISBN: </b><%=@books.ISBN%><br/>
-<b>Author: </b><%=link_to @books.author.name, author_path%><br/>
-<b>Publisher: </b><%=link_to @books.publisher.name, publisher_path%><br/>
+<b>Name: </b><%=@book.name%><br/>
+<b>Description: </b><%=@book.description%><br/>
+<b>ISBN: </b><%=@book.ISBN%><br/>
+<b>Author: </b><%=link_to @book.author.name, author_path%><br/>
+<b>Publisher: </b><%=link_to @book.publisher.name, publisher_path%><br/>
 <b>Average Rating: </b><%= @book.average_rating %><br />
 
 <%= render 'votes/form'%>
@@ -16,6 +16,9 @@
 <% @book.voters.each do |u| %>
   <%= u.email %><br />
 <% end %>
+
+<%= render 'comments/comment_list' %>
+<%= render 'comments/form' %>
 
 
 <br/><br/>

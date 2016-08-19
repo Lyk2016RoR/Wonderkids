@@ -14,7 +14,7 @@ class BooksController < ApplicationController
 	end
 
 	def show
-		@books = Book.find(params[:id])
+		@book = Book.find(params[:id])
 		if current_user
       		if @book.votes.where(user_id: current_user.id).any?
         		@vote = @book.votes.where(user_id: current_user.id).first
