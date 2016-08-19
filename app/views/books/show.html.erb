@@ -7,8 +7,8 @@
 <b>Name: </b><%=@books.name%><br/>
 <b>Description: </b><%=@books.description%><br/>
 <b>ISBN: </b><%=@books.ISBN%><br/>
-<b>Author: </b><%=link_to @books.author, author_path%><br/>
-<b>Publisher: </b><%=link_to @books.publisher, publisher_path%><br/>
+<b>Author: </b><%=link_to @books.author.name, author_path%><br/>
+<b>Publisher: </b><%=link_to @books.publisher.name, publisher_path%><br/>
 <b>Average Rating: </b><%= @book.average_rating %><br />
 
 <%= render 'votes/form'%>
