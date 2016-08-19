@@ -7,5 +7,4 @@
 <b>ISBN: </b><%=@books.ISBN%><br/>
 <b>Author: </b><%=link_to @books.author.name, author_path%><br/>
 <b>Publisher: </b><%=link_to @books.publisher.name, publisher_path%><br/>
-
 <%= render 'votes/form'%>
