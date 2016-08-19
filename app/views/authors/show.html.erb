@@ -1,5 +1,5 @@
-<% @author.each do |author|%>
-  <b>Name: </b> <%= author.name%>
-  <b>Description: </b> <%=author.description%>
-  <b>Books: </b> <%= link_to author.book.name, books.path(book)%>
-  <%end%>
+<%@author.books.each do |book|%>
+  <b>Name: </b> <%= @author.name%>
+  <b>Description: </b> <%=@author.description%>
+  <b>Books: </b> <%= link_to book.name, book_path(book)%>
+<%end%>

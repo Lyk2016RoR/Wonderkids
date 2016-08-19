@@ -1,7 +1,7 @@
 <b>Name: </b><%=@books.name%><br/>
 <b>Description: </b><%=@books.description%><br/>
 <b>ISBN: </b><%=@books.ISBN%><br/>
-<b>Author: </b><%=@books.author.name%><br/>
+<b>Author: </b><%=link_to @books.author.name, author_path%><br/>
 
 <b>Publisher: </b><%=@books.publisher.name%><br/>
 
