@@ -1,10 +1,22 @@
-
+<% if @book.errors.any?%>
+	<%=@book.errors.full_messages.join(", ")%>
+<%end%>
 
 <br/><br/>
 <br/>
 <b>Name: </b><%=@books.name%><br/>
 <b>Description: </b><%=@books.description%><br/>
 <b>ISBN: </b><%=@books.ISBN%><br/>
-<b>Author: </b><%=link_to @books.author.name, author_path%><br/>
-<b>Publisher: </b><%=link_to @books.publisher.name, publisher_path%><br/>
+<b>Author: </b><%=link_to @books.author, author_path%><br/>
+<b>Publisher: </b><%=link_to @books.publisher, publisher_path%><br/>
+<b>Average Rating: </b><%= @book.average_rating %><br />
+
 <%= render 'votes/form'%>
+
+<% @book.voters.each do |u| %>
+  <%= u.email %><br />
+<% end %>
+
+
+<br/><br/>
+<%= link_to "Back to books list", books_path %>

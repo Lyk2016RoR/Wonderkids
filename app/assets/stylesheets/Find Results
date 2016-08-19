@@ -1,0 +1,27 @@
+Searching 823 files for "thumbnail"
+
+/root/Masaüstü/Wonderkids/app/assets/stylesheets/application.scss:
+   42  }
+   43  
+   44: .thumbnail img {
+   45      width: 100%;
+   46  }
+   ..
+   52  }
+   53  
+   54: .thumbnail {
+   55      padding: 0;
+   56  }
+   57  
+   58: .thumbnail .caption-full {
+   59      padding: 9px;
+   60      color: #333;
+
+/root/Masaüstü/Wonderkids/app/views/welcome/index.html.erb:
+   35  
+   36         <div class="col-sm-4 col-lg-4 col-md-4">
+   37:         <div class="thumbnail">
+   38              <img src="http://www.ford.com.tr/cs/Storage/EP2COM_ENGInE/_vip/1205094594115/00S_YYB/DSB/C4A/BTN/1/0/Mustang_Convert_RubyRed_LHD_Front_00001.jpg" alt="">
+   39              <div class="caption">
+
+4 matches across 2 files

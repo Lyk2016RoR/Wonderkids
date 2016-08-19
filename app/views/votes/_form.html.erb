@@ -1,13 +1,14 @@
-<% if current_user %>
+<% if current_user.present? %>
 	<%= form_for [@book, @vote] do |f| %>
 	  <% 5.times do |i| %>
 	    <%= f.radio_button :rating, i+1 %>
 	    <% (i+1).times do %>
-	      <i class='fa fa-star'></i>
+	      <i style="color:#D17581" class="glyphicon glyphicon-star"></i>
 	    <% end %>
 	    <br />
-	  <% end %>
 
+	  <% end %>
+ 
 	  <%= f.submit "Vote", class: "btn btn-sm btn-primary" %>
 	<% end %>
 <% end %>
