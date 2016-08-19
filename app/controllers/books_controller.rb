@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-		  before_action :authenticate_user!, except: [:show, :index]
+		before_action :authenticate_user!, except: [:show, :index]
      	before_action :set_book, only: [:show, :update, :edit, :destroy]
      	before_action :authorize_user!, only: [:edit, :update, :destroy]
 	def new
@@ -10,6 +10,13 @@ class BooksController < ApplicationController
 	end
 	def show
 		@books = Book.find(params[:id])
+		if current_user
+      		if @book.votes.where(user_id: current_user.id).any?
+        		@vote = @book.votes.where(user_id: current_user.id).first
+      		else
+        		@vote = @book.votes.build
+     		end
+    	end
 	end
 
 	def create
