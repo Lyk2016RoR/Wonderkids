@@ -1,26 +1,8 @@
 <%@books.each do |books|%>
-<%=link_to books.name, book_path(books)%>
-<%=books.publish_date%>
-<%=books.description%>
-<%=books.ISBN%>
-<%=books.views_count%>
+<%=link_to books.name, book_path(books)%> : </br>
+<%=books.description%>  </br>
 <%end%>
 <% if current_user %>
 <%= link_to "favorite",   favorite_recipe_path(@book, type: "favorite"), method: :put %>
 <%= link_to "unfavorite", favorite_recipe_path(@book, type: "unfavorite"), method: :put %>
 <% end %>
-
-<div class="row">
-<div class="col-md-4">
-	  <div class="panel panel-default">
-	    <div class="panel-heading"><i class="fa fa-comments-o"></i> Son Yorumlar</div>
-	    <div class="list-group">
-	      <a href="#" class="list-group-item">Son Yorum #1</a>
-	      <a href="#" class="list-group-item">Son Yorum #2</a>
-	      <a href="#" class="list-group-item">Son Yorum #3</a>
-	      <a href="#" class="list-group-item">Son Yorum #4</a>
-	      <a href="#" class="list-group-item">Son Yorum #5</a>
-	    </div>
-	  </div>
-	</div>
-	</div>

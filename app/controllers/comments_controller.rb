@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
 before_action :authenticate_user!
-  before_action :set_place
+  before_action :set_book
   before_action :set_comment, only: [:destroy]
   before_action :authorize_user!, only: [:destroy]
 
@@ -49,7 +49,7 @@ before_action :authenticate_user!
     params.require(:comment).permit(:body)
   end
 
-  def set_place
+  def set_book
     @book = Book.find(params[:book_id])
   end
 
